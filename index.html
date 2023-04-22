@@ -4,12 +4,109 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css" />
     <title>Computational Studio</title>
 </head>
 <body>
+<nav>
+    <a href="#home" class="active">Home</a>
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+</nav>
+    <h1>Happy <span id="dayWeek"></span>,</h1>
+    <h2>lets try these meals!</h2>
+    <!-- <p> how about them apple jacks</p> -->
+    <div class="grid">
+        <div id="recCaro" class="cell col1">
 
-    <h1>Hello!</h1>
-    <p> how about them apple jacks</p>
+            <swiper-container class="mySwiper" init="false">
+                <swiper-slide id="Ceaser_salad"><img alt="Image of ceaser salad" src="images/ceaserSalad.jpeg"></swiper-slide>
+                <swiper-slide id="Garlic_soup"><img alt="Image of Garlic soup" src="images/garlicSoup.jpeg"></swiper-slide>
+                <!-- <swiper-slide>Slide 3</swiper-slide>
+                <swiper-slide>Slide 4</swiper-slide>
+                <swiper-slide>Slide 5</swiper-slide>
+                <swiper-slide>Slide 6</swiper-slide>
+                <swiper-slide>Slide 7</swiper-slide>
+                <swiper-slide>Slide 8</swiper-slide>
+                <swiper-slide>Slide 9</swiper-slide> -->
+              </swiper-container>
+
+        </div>
+        <div class="cell col2 md2"><h2 id="mealName"></div>
+        <div class="cell col2 md2">this is the food boxes</div>
+
+        <!-- <div class="cell col3">3 Column</div>
+        <div class="cell col3">3 Column</div>
+        <div class="cell col3">3 Column</div>
+        <div class="cell col4 md2">4 Column</div>
+        <div class="cell col4 md2">4 Column</div>
+        <div class="cell col4 md2">4 Column</div>
+        <div class="cell col4 md2">4 Column</div>
+        <div class="cell col6 md2">6 Column</div>
+        <div class="cell col6 md2">6 Column</div>
+        <div class="cell col6 md2">6 Column</div>
+        <div class="cell col6 md2">6 Column</div>
+        <div class="cell col6 md2">6 Column</div>
+        <div class="cell col6 md2">6 Column</div>
+        <div class="cell col12 md3 sm2">12 Column</div>
+        <div class="cell col12 md3 sm2">12 Column</div>
+        <div class="cell col12 md3 sm2">12 Column</div>
+        <div class="cell col12 md3 sm2">12 Column</div>
+        <div class="cell col12 md3 sm2">12 Column</div>
+        <div class="cell col12 md3 sm2">12 Column</div>
+        <div class="cell col12 md3 sm2">12 Column</div>
+        <div class="cell col12 md3 sm2">12 Column</div>
+        <div class="cell col12 md3 sm2">12 Column</div>
+        <div class="cell col12 md3 sm2">12 Column</div>
+        <div class="cell col12 md3 sm2">12 Column</div>
+        <div class="cell col12 md3 sm2">12 Column</div> -->
+
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+
+  <script>
+    const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    const d = new Date();
+    let day = days[d.getDay()];
+    document.getElementById("dayWeek").innerHTML = day;
     
+    const swiperEl = document.querySelector('swiper-container')
+    Object.assign(swiperEl, {
+        on: {
+    slideChange: function () {
+      const index_currentSlide = this.realIndex;
+      let id = document.getElementsByTagName("swiper-slide")[index_currentSlide].id;
+    //   id.replace(/_/g,' ');
+document.getElementById("mealName").innerHTML = id;
+    },
+  },
+      slidesPerView: 1.125,
+      centeredSlides: true,
+            spaceBetween: 10,
+      pagination: {
+        clickable: true,
+      },
+      breakpoints: {
+        // 640: {
+        //   slidesPerView: ,
+        //   spaceBetween: 20,
+        // },
+        768: {
+          slidesPerView: 2.5,
+          spaceBetween: 40,
+        },
+        1024: {
+          slidesPerView: 3.5,
+          spaceBetween: 50,
+        },
+      },
+    });
+    swiperEl.initialize();
+    
+  </script>
 </body>
+
+
 </html>
